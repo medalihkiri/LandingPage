@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 
 <head>
   <meta charset="UTF-8" />
@@ -496,7 +496,6 @@
     <!-- Subheader + descriptor -->
     <div class="sub a d4">
       <span class="sub-main">Photography &middot; Videography &middot; Graphic Design</span>
-      <span class="sub-desc">nocta.ink.art</span>
     </div>
 
     <!-- Action buttons -->
@@ -576,8 +575,7 @@
     if (saved) {
       html.setAttribute('data-theme', saved);
     } else {
-      const sys = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-      html.setAttribute('data-theme', sys);
+      html.setAttribute('data-theme', 'light');
     }
 
     btn.addEventListener('click', () => {
