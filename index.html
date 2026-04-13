@@ -15,7 +15,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <!-- Anton: ultra-bold condensed (matches reference business card) -->
   <!-- JetBrains Mono: data/labels -->
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Great+Vibes&family=JetBrains+Mono:wght@300;400;500&display=swap"
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Great+Vibes&family=JetBrains+Mono:wght@300;400;500&display=swap"
     rel="stylesheet" />
 
   <style>
@@ -407,7 +408,7 @@
     .foot-qr-btn:hover {
       border-color: var(--accent);
       color: var(--primary);
-      box-shadow: 0 0 0 1px var(--accent), 0 0 18px rgba(255,0,51,.12);
+      box-shadow: 0 0 0 1px var(--accent), 0 0 18px rgba(255, 0, 51, .12);
     }
 
     .foot-qr-btn .ico {
@@ -465,13 +466,14 @@
     .modal-qr-container {
       width: 100%;
       aspect-ratio: 1/1;
-      background: #ffffff; /* Always white so QR is scannable */
+      background: #ffffff;
+      /* Always white so QR is scannable */
       padding: 1rem;
       margin-bottom: 2rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
     }
 
     .modal-qr-container img {
@@ -572,13 +574,13 @@
       outline: none;
       -webkit-tap-highlight-color: transparent;
       transition: border-color .25s, color .25s, box-shadow .25s;
-      text-shadow: 0 0 12px rgba(255,0,51,.55), 0 0 28px rgba(255,0,51,.25);
+      text-shadow: 0 0 12px rgba(255, 0, 51, .55), 0 0 28px rgba(255, 0, 51, .25);
     }
 
     .tarif-btn:hover {
       border-color: var(--accent);
-      box-shadow: 0 0 0 1px var(--accent), 0 0 22px rgba(255,0,51,.18);
-      text-shadow: 0 0 16px rgba(255,0,51,.8), 0 0 36px rgba(255,0,51,.35);
+      box-shadow: 0 0 0 1px var(--accent), 0 0 22px rgba(255, 0, 51, .18);
+      text-shadow: 0 0 16px rgba(255, 0, 51, .8), 0 0 36px rgba(255, 0, 51, .35);
     }
 
     .tarif-btn-label {
@@ -610,7 +612,7 @@
       color: #080808;
       overflow-y: auto;
       transform: translateX(-100%);
-      transition: transform .55s cubic-bezier(0.16,1,0.3,1);
+      transition: transform .55s cubic-bezier(0.16, 1, 0.3, 1);
       display: flex;
       flex-direction: column;
     }
@@ -628,8 +630,8 @@
       align-items: center;
       justify-content: space-between;
       padding: .85rem 1.2rem;
-      background: rgba(242,240,239,.96);
-      border-bottom: 1px solid rgba(0,0,0,.07);
+      background: rgba(242, 240, 239, .96);
+      border-bottom: 1px solid rgba(0, 0, 0, .07);
     }
 
     /* back button inside panel */
@@ -679,17 +681,19 @@
       justify-content: center;
       outline: none;
       -webkit-tap-highlight-color: transparent;
-      box-shadow: 0 2px 14px rgba(255,0,51,.35);
+      box-shadow: 0 2px 14px rgba(255, 0, 51, .35);
       transition: transform .22s var(--ease), box-shadow .22s var(--ease);
       position: relative;
     }
 
     .tarif-contact-fab:hover {
       transform: scale(1.08);
-      box-shadow: 0 4px 22px rgba(255,0,51,.5);
+      box-shadow: 0 4px 22px rgba(255, 0, 51, .5);
     }
 
-    .tarif-contact-fab:active { transform: scale(.95); }
+    .tarif-contact-fab:active {
+      transform: scale(.95);
+    }
 
     .tarif-contact-fab svg {
       width: 18px;
@@ -787,7 +791,7 @@
     /* Divider */
     .tarif-rule {
       height: 1px;
-      background: rgba(0,0,0,.08);
+      background: rgba(0, 0, 0, .08);
       margin: 1.6rem 0;
     }
 
@@ -831,13 +835,20 @@
       content: '';
       position: absolute;
       inset: -5px;
-      border: 2px solid rgba(255,0,51,.45);
+      border: 2px solid rgba(255, 0, 51, .45);
       animation: pulse-ring 2.4s ease-out infinite;
     }
 
     @keyframes pulse-ring {
-      0%   { opacity:.7; transform: scale(1); }
-      100% { opacity:0;  transform: scale(1.55); }
+      0% {
+        opacity: .7;
+        transform: scale(1);
+      }
+
+      100% {
+        opacity: 0;
+        transform: scale(1.55);
+      }
     }
 
     /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -846,7 +857,7 @@
     .contact-overlay {
       position: fixed;
       inset: 0;
-      background: rgba(5,5,5,.88);
+      background: rgba(5, 5, 5, .88);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
       z-index: 700;
@@ -869,7 +880,7 @@
     }
 
     [data-theme="light"] .contact-overlay {
-      background: rgba(242,240,239,.88);
+      background: rgba(242, 240, 239, .88);
     }
 
     .contact-choice-title {
@@ -914,11 +925,13 @@
 
     .choice-btn:hover {
       border-color: var(--accent);
-      box-shadow: 0 0 0 1px var(--accent), 0 0 28px rgba(255,0,51,.1);
+      box-shadow: 0 0 0 1px var(--accent), 0 0 28px rgba(255, 0, 51, .1);
       color: var(--primary);
     }
 
-    .choice-btn:active { transform: scale(.985); }
+    .choice-btn:active {
+      transform: scale(.985);
+    }
 
     .choice-btn--wa,
     .choice-btn--primary {
@@ -932,7 +945,7 @@
       background: #d40029;
       border-color: #d40029;
       color: #fff;
-      box-shadow: 0 0 0 1px #d40029, 0 0 36px rgba(255,0,51,.22);
+      box-shadow: 0 0 0 1px #d40029, 0 0 36px rgba(255, 0, 51, .22);
     }
 
     .choice-btn svg {
@@ -997,7 +1010,12 @@
 
   <!-- ── Tarif button top-left ── -->
   <button class="tarif-btn" id="btn-open-tarif" aria-label="Grille Tarifaire">
-    <svg class="ico" viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg>
+    <svg class="ico" viewBox="0 0 24 24">
+      <path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2" />
+      <rect x="9" y="3" width="6" height="4" rx="1" />
+      <line x1="9" y1="12" x2="15" y2="12" />
+      <line x1="9" y1="16" x2="13" y2="16" />
+    </svg>
     <span class="tarif-btn-label">Tarifs</span>
   </button>
 
@@ -1085,13 +1103,14 @@
           </svg>
           Facebook
         </button>
-        <button type="button" id="btn-ig" class="btn" aria-label="Instagram">
+        <a href="https://www.instagram.com/nocta.ink.art/" id="btn-ig" class="btn" target="_blank"
+          rel="noopener noreferrer" aria-label="Instagram">
           <svg class="ico" viewBox="0 0 24 24">
             <path
               d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z" />
           </svg>
           Instagram
-        </button>
+        </a>
       </div>
 
     </div>
@@ -1103,16 +1122,29 @@
   <!-- ── Contact Choice Overlay ── -->
   <div class="contact-overlay" id="contact-overlay" role="dialog" aria-modal="true" aria-label="Contact options">
     <button class="contact-overlay-close" id="btn-close-contact" aria-label="Close">
-      <svg fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      <svg fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" viewBox="0 0 24 24">
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg>
     </button>
     <p class="contact-choice-title">Nous contacter</p>
     <div class="contact-choices">
-      <a href="https://wa.me/21656731471" id="choice-whatsapp" class="choice-btn choice-btn--wa" target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.558 4.116 1.535 5.845L.057 23.617a.5.5 0 0 0 .612.612l5.772-1.478A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.894 0-3.665-.527-5.17-1.44l-.372-.22-3.427.878.891-3.343-.242-.384A9.956 9.956 0 0 1 2 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+      <a href="https://wa.me/21656731471" id="choice-whatsapp" class="choice-btn choice-btn--wa" target="_blank"
+        rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+          <path
+            d="M12 0C5.373 0 0 5.373 0 12c0 2.123.558 4.116 1.535 5.845L.057 23.617a.5.5 0 0 0 .612.612l5.772-1.478A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.894 0-3.665-.527-5.17-1.44l-.372-.22-3.427.878.891-3.343-.242-.384A9.956 9.956 0 0 1 2 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z" />
+        </svg>
         WhatsApp
       </a>
       <a href="tel:+21656731471" id="choice-phone" class="choice-btn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.08 4.18 2 2 0 0 1 5.07 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L9.91 9.91a16 16 0 0 0 6.18 6.18l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 24 16.92z"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+          stroke-linejoin="round">
+          <path
+            d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.08 4.18 2 2 0 0 1 5.07 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L9.91 9.91a16 16 0 0 0 6.18 6.18l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 24 16.92z" />
+        </svg>
         Appeler
       </a>
     </div>
@@ -1121,18 +1153,33 @@
   <!-- ── Coming Soon Overlay ── -->
   <div class="contact-overlay" id="coming-soon-overlay" role="dialog" aria-modal="true" aria-label="Coming Soon">
     <button class="contact-overlay-close" id="btn-close-coming-soon" aria-label="Close">
-      <svg fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      <svg fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" viewBox="0 0 24 24">
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg>
     </button>
     <div class="contact-choices" style="text-align: center;">
       <h2 class="coming-soon-title">Bientôt<br>disponible</h2>
-      <p class="coming-soon-desc">En attendant, explorez notre portfolio ou contactez-nous. Notre vision ne vous décevra pas.</p>
-      
-      <a href="https://v-arts.myportfolio.com/" target="_blank" rel="noopener noreferrer" class="choice-btn">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px;flex-shrink:0;"><rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" /><rect x="14" y="14" width="7" height="7" /><rect x="3" y="14" width="7" height="7" /></svg>
+      <p class="coming-soon-desc">En attendant, explorez notre portfolio ou contactez-nous. Notre vision ne vous décevra
+        pas.</p>
+
+      <a href="https://charming-queijadas-3a416c.netlify.app/lab/gallery" target="_blank" rel="noopener noreferrer"
+        class="choice-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+          stroke-linejoin="round" style="width:17px;height:17px;flex-shrink:0;">
+          <rect x="3" y="3" width="7" height="7" />
+          <rect x="14" y="3" width="7" height="7" />
+          <rect x="14" y="14" width="7" height="7" />
+          <rect x="3" y="14" width="7" height="7" />
+        </svg>
         Portfolio
       </a>
       <button type="button" class="choice-btn choice-btn--primary" id="btn-cs-contact" style="width:100%;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="width:17px;height:17px;flex-shrink:0;"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.08 4.18 2 2 0 0 1 5.07 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L9.91 9.91a16 16 0 0 0 6.18 6.18l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 24 16.92z"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+          stroke-linejoin="round" style="width:17px;height:17px;flex-shrink:0;">
+          <path
+            d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3.08 4.18 2 2 0 0 1 5.07 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L9.91 9.91a16 16 0 0 0 6.18 6.18l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 24 16.92z" />
+        </svg>
         Contact
       </button>
     </div>
@@ -1143,13 +1190,21 @@
     <!-- nav bar: back + right controls -->
     <div class="tarif-nav">
       <button class="tarif-back" id="btn-close-tarif" aria-label="Retour">
-        <svg fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        <svg fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
+          viewBox="0 0 24 24">
+          <polyline points="15 18 9 12 15 6" />
+        </svg>
         Retour
       </button>
       <div class="tarif-nav-right">
         <!-- Contact FAB inside panel -->
         <button class="tarif-contact-fab" id="btn-contact-fab" aria-label="Contact">
-          <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.558 4.116 1.535 5.845L.057 23.617a.5.5 0 0 0 .612.612l5.772-1.478A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.894 0-3.665-.527-5.17-1.44l-.372-.22-3.427.878.891-3.343-.242-.384A9.956 9.956 0 0 1 2 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z"/></svg>
+          <svg viewBox="0 0 24 24">
+            <path
+              d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+            <path
+              d="M12 0C5.373 0 0 5.373 0 12c0 2.123.558 4.116 1.535 5.845L.057 23.617a.5.5 0 0 0 .612.612l5.772-1.478A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.894 0-3.665-.527-5.17-1.44l-.372-.22-3.427.878.891-3.343-.242-.384A9.956 9.956 0 0 1 2 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z" />
+          </svg>
         </button>
       </div>
     </div>
@@ -1171,6 +1226,7 @@
         </div>
         <ul class="pack-items">
           <li>Shooting Photos Demi Journée</li>
+          <li>Couverture cérémonie</li>
           <li>1 Photographe</li>
           <li>1 Videographe</li>
           <li>Environ 100 Photos, 1 Video Reportage</li>
@@ -1187,6 +1243,7 @@
         </div>
         <ul class="pack-items">
           <li>Shooting Photos 1 Journée</li>
+          <li>Couverture cérémonie</li>
           <li>2 Photographes</li>
           <li>1 Videographe</li>
           <li>Environ 300 Photos, 1 Video Reportage, 3 Shorts</li>
@@ -1203,8 +1260,9 @@
         </div>
         <ul class="pack-items">
           <li>Shooting Photos et videos 1 Journée</li>
+          <li>Couverture cérémonie</li>
           <li>2 Photographes (1 caché)</li>
-          <li>2 Videographes + Bras Eagle Eye</li>
+          <li>2 Videographes + Eagle Eye Manuel</li>
           <li>Environ 300 Photos, 2 Videos Reportage, 5 Shorts</li>
         </ul>
       </div>
@@ -1219,8 +1277,9 @@
         </div>
         <ul class="pack-items">
           <li>Shooting Photos et videos 2 Journées</li>
+          <li>Couverture cérémonie</li>
           <li>2 Photographes (1 caché) + PhotoBooth</li>
-          <li>2 Videographes + Eagle Eye</li>
+          <li>2 Videographes + Drone</li>
           <li>Environ 300 Photos, 2 Videos Reportage, 5 Shorts</li>
           <li>Edits Photoshop et VFX</li>
         </ul>
@@ -1232,10 +1291,10 @@
       <div class="extras-title">Extras</div>
       <div class="extras-grid">
         <span class="extra-price">300DT</span> <span class="extra-name">PhotoBooth</span>
-        <span class="extra-price">200DT</span> <span class="extra-name">Bras Eagle Eye</span>
-        <span class="extra-price">500DT</span> <span class="extra-name">Drone Eagle Eye</span>
+        <span class="extra-price">200DT</span> <span class="extra-name">Eagle Eye Manuel</span>
+        <span class="extra-price">500DT</span> <span class="extra-name">Eagle Eye Drone</span>
         <span class="extra-price">500DT / 10Ph</span><span class="extra-name">Photoshop</span>
-        <span class="extra-price">500Dt / 1Vid</span><span class="extra-name">VFX</span>
+        <span class="extra-price">500Dt / 30s</span><span class="extra-name">VFX</span>
       </div>
 
     </div>
@@ -1243,13 +1302,14 @@
 
   <!-- ── Footer ── -->
   <footer class="footer" role="contentinfo">
-    <span class="foot-lbl">NOCTA &copy; 2025</span>
+    <span class="foot-lbl">NOCTA &copy; 2026</span>
     <span class="foot-lbl" aria-hidden="true">V · ARTS</span>
   </footer>
 
   <!-- ── QR Button — fixed bottom left ── -->
   <button class="foot-qr-btn" id="btn-open-qr" aria-label="Show QR Code">
-    <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+      stroke-linejoin="round">
       <rect x="3" y="3" width="5" height="5" rx="1" />
       <rect x="16" y="3" width="5" height="5" rx="1" />
       <rect x="3" y="16" width="5" height="5" rx="1" />
@@ -1271,11 +1331,13 @@
     <div class="modal-content">
       <div class="modal-qr-container">
         <!-- Replace src below with your QR code image path when ready -->
-        <img src="qr.png" alt="Scan QR Code" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%23f0f0f0\'/><text x=\'50\' y=\'50\' font-family=\'sans-serif\' font-size=\'10\' text-anchor=\'middle\' alignment-baseline=\'middle\' fill=\'%23a0a0a0\'>qr.png</text></svg>'">
+        <img src="qr.png" alt="Scan QR Code"
+          onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%23f0f0f0\'/><text x=\'50\' y=\'50\' font-family=\'sans-serif\' font-size=\'10\' text-anchor=\'middle\' alignment-baseline=\'middle\' fill=\'%23a0a0a0\'>qr.png</text></svg>'">
       </div>
       <h2 id="modal-title" class="sub-main" style="margin-bottom: 2rem;">Scan to Connect</h2>
       <button class="btn" id="btn-close-qr" aria-label="Close QR Modal">
-        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+          stroke-linejoin="round">
           <line x1="18" y1="6" x2="6" y2="18"></line>
           <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
@@ -1377,12 +1439,8 @@
     const btnIg = document.getElementById('btn-ig');
     const btnCloseComingSoon = document.getElementById('btn-close-coming-soon');
 
-    // Open when either Facebook or Instagram is clicked
+    // Open when Facebook is clicked
     btnFb.addEventListener('click', (e) => {
-      e.preventDefault();
-      comingSoonOverlay.classList.add('active');
-    });
-    btnIg.addEventListener('click', (e) => {
       e.preventDefault();
       comingSoonOverlay.classList.add('active');
     });
