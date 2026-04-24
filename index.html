@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark" class="notranslate" translate="no">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="NOCTA — Visual Arts. Photography, Direction & Creative Vision." />
-  <meta property="og:title" content="NOCTA — Visual Arts" />
-  <meta property="og:description" content="Photography · Direction · Creative Vision" />
+  <meta name="description" content="NOCTA — Art • Tech • Systems. Multidisciplinary creative studio." />
+  <meta property="og:title" content="NOCTA — Art • Tech • Systems" />
+  <meta property="og:description" content="Multidisciplinary creative studio" />
   <meta name="theme-color" content="#050505" />
-  <title>NOCTA — Visual Arts</title>
+  <meta name="google" content="notranslate" />
+  <title>NOCTA — Art • Tech • Systems</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -20,6 +21,82 @@
     rel="stylesheet" />
 
   <style>
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       LOADER
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+    .loader {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+      transition: opacity 1s cubic-bezier(0.85, 0, 0.15, 1), visibility 0s linear 1s;
+      will-change: opacity;
+    }
+
+    .loader.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .loader-content {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.8rem;
+      width: 240px;
+      position: relative;
+      z-index: 10001;
+    }
+
+    .loader-label {
+      font-family: var(--f-mono);
+      font-size: 0.55rem;
+      letter-spacing: 0.4em;
+      text-transform: uppercase;
+      color: var(--muted);
+      opacity: 0.8;
+    }
+
+    .loader-counter-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 0.2rem;
+      font-family: var(--f-mono);
+      font-size: 3.2rem;
+      font-weight: 300;
+      line-height: 0.9;
+      letter-spacing: -0.05em;
+    }
+
+    .loader-decimal {
+      font-size: 0.9rem;
+      color: var(--accent);
+      margin-left: -0.2rem;
+    }
+
+    .loader-bar-wrap {
+      width: 100%;
+      height: 1px;
+      background: var(--divider);
+      position: relative;
+      overflow: hidden;
+      margin-top: 1.2rem;
+    }
+
+    .loader-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0%;
+      background: var(--accent);
+    }
+
     /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
        DESIGN TOKENS
     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
@@ -92,6 +169,8 @@
       height: 40px;
       background: var(--toggle-bg);
       border: 1px solid var(--btn-border);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       color: var(--muted);
       cursor: pointer;
       display: flex;
@@ -126,7 +205,11 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: 5rem 2rem 6rem;
+      padding: clamp(4rem, 10vw, 5rem) clamp(1.2rem, 5vw, 2.5rem) 5.5rem;
+      box-sizing: border-box;
+      width: 100%;
+      overflow-x: hidden;
+      z-index: 10;
     }
 
     /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -134,22 +217,26 @@
     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
     .eyebrow {
       font-family: var(--f-mono);
-      font-size: 1rem;
-      letter-spacing: .38em;
+      font-size: clamp(.65rem, 2.8vw, .88rem);
+      letter-spacing: clamp(.2em, 1.5vw, .36em);
       text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 2rem;
+      margin-bottom: 1.8rem;
       display: flex;
       align-items: center;
-      gap: .75rem;
+      justify-content: center;
+      gap: .6rem;
+      white-space: nowrap;
+      max-width: 100%;
     }
 
     .eyebrow::before,
     .eyebrow::after {
       content: '';
       display: block;
-      width: 28px;
+      width: clamp(16px, 4vw, 28px);
       height: 1px;
+      flex-shrink: 0;
       background: var(--accent);
     }
 
@@ -159,8 +246,7 @@
     .wordmark {
       font-family: var(--f-display);
       font-weight: 400;
-      /* Anton is inherently ultra-bold */
-      font-size: clamp(5.5rem, 28vw, 12rem);
+      font-size: clamp(10rem, 26vw, 14rem);
       line-height: .88;
       letter-spacing: -.01em;
       text-transform: uppercase;
@@ -168,6 +254,7 @@
       transition: color .5s var(--ease);
       user-select: none;
       text-align: center;
+      width: 100%;
     }
 
     /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -218,8 +305,8 @@
     .actions {
       display: flex;
       flex-direction: column;
-      align-items: center;
-      gap: .6rem;
+      align-items: stretch;
+      gap: .55rem;
       width: 100%;
       max-width: 360px;
     }
@@ -232,10 +319,12 @@
       justify-content: center;
       gap: .6rem;
       width: 100%;
+      min-height: 48px;
+      /* WCAG touch target */
       padding: .88rem 1.4rem;
       font-family: var(--f-mono);
-      font-size: .65rem;
-      letter-spacing: .26em;
+      font-size: clamp(.58rem, 2.2vw, .65rem);
+      letter-spacing: .24em;
       text-transform: uppercase;
       text-decoration: none;
       color: var(--btn-text);
@@ -243,6 +332,7 @@
       border: 1px solid var(--btn-border);
       cursor: pointer;
       overflow: hidden;
+      box-sizing: border-box;
       transition:
         border-color .22s var(--ease),
         box-shadow .22s var(--ease),
@@ -311,7 +401,7 @@
     /* social pair */
     .social {
       display: flex;
-      gap: .6rem;
+      gap: .5rem;
       width: 100%;
     }
 
@@ -319,8 +409,10 @@
       flex: 1;
       flex-direction: column;
       gap: .35rem;
-      font-size: .56rem;
-      padding: .85rem .5rem;
+      font-size: clamp(.48rem, 2vw, .56rem);
+      padding: .85rem .4rem;
+      min-width: 0;
+      /* prevent flex overflow */
     }
 
     /* icons */
@@ -483,12 +575,15 @@
     }
 
     /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-       ENTRANCE ANIMATIONS
+       ENTRANCE ANIMATIONS — gated on body.loaded
     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
     .a {
       opacity: 0;
-      transform: translateY(14px);
-      animation: rise .75s var(--ease) forwards;
+      transform: translateY(16px);
+    }
+
+    body.loaded .a {
+      animation: rise .8s var(--ease) forwards;
     }
 
     .d1 {
@@ -496,23 +591,23 @@
     }
 
     .d2 {
-      animation-delay: .16s;
+      animation-delay: .18s;
     }
 
     .d3 {
-      animation-delay: .27s;
+      animation-delay: .30s;
     }
 
     .d4 {
-      animation-delay: .36s;
+      animation-delay: .40s;
     }
 
     .d5 {
-      animation-delay: .44s;
+      animation-delay: .50s;
     }
 
     .d6 {
-      animation-delay: .52s;
+      animation-delay: .60s;
     }
 
     @keyframes rise {
@@ -525,12 +620,35 @@
     /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
        RESPONSIVE
     ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+
+    /* Tiny phones (≤360px) */
+    @media (max-width: 360px) {
+      .tarif-btn {
+        top: 1rem;
+        left: 1rem;
+      }
+
+      .toggle {
+        top: 1rem;
+        right: 1rem;
+      }
+    }
+
+    /* Small phones */
+    @media (min-width: 380px) {
+      .actions {
+        max-width: 340px;
+      }
+    }
+
+    /* Medium+ */
     @media (min-width: 480px) {
       .actions {
         max-width: 400px;
       }
     }
 
+    /* Tablet / desktop */
     @media (min-width: 720px) {
       .wordmark {
         font-size: clamp(7rem, 18vw, 13rem);
@@ -542,6 +660,15 @@
 
       .actions {
         max-width: 440px;
+      }
+    }
+
+    /* Reduced motion — skip entrance animation, show content immediately */
+    @media (prefers-reduced-motion: reduce) {
+      .a {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
       }
     }
 
@@ -1008,6 +1135,25 @@
 
 <body>
 
+  <!-- ── Fluid Background ── -->
+  <canvas id="fluid-canvas"
+    style="position: fixed; inset: 0; width: 100%; height: 100%; pointer-events: none; z-index: 1;"></canvas>
+
+  <!-- ── Loading Screen ── -->
+  <div class="loader" id="page-loader">
+    <div class="loader-content">
+      <div class="loader-label">Initializing System</div>
+      <div class="loader-counter-wrap">
+        <span id="loader-int">00</span><span class="loader-decimal">.<span id="loader-dec">00</span></span>
+      </div>
+      <div class="loader-bar-wrap">
+        <div class="loader-bar" id="loader-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="fluid.js"></script>
+
   <!-- ── Tarif button top-left ── -->
   <button class="tarif-btn" id="btn-open-tarif" aria-label="Grille Tarifaire">
     <svg class="ico" viewBox="0 0 24 24">
@@ -1016,7 +1162,7 @@
       <line x1="9" y1="12" x2="15" y2="12" />
       <line x1="9" y1="16" x2="13" y2="16" />
     </svg>
-    <span class="tarif-btn-label">Tarifs</span>
+    <span class="tarif-btn-label">Marriages</span>
   </button>
 
   <!-- ── Theme toggle ── -->
@@ -1043,7 +1189,7 @@
   <main class="page" role="main">
 
     <!-- Eyebrow label -->
-    <div class="eyebrow a d1" aria-hidden="true">Visual Arts</div>
+    <div class="eyebrow a d1" aria-hidden="true"> Art • Tech • Systems </div>
 
     <!-- NOCTA wordmark -->
     <h1 class="wordmark a d2" id="wordmark">NOCTA</h1>
@@ -1053,7 +1199,7 @@
 
     <!-- Subheader + descriptor -->
     <div class="sub a d4">
-      <span class="sub-main">Photography &middot; Videography &middot; Graphic Design</span>
+      <span class="sub-main">Studio creatif multidisciplinaire</span>
     </div>
 
     <!-- Action buttons -->
@@ -1068,7 +1214,7 @@
           <path
             d="M12 0C5.373 0 0 5.373 0 12c0 2.123.558 4.116 1.535 5.845L.057 23.617a.5.5 0 0 0 .612.612l5.772-1.478A11.95 11.95 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.894 0-3.665-.527-5.17-1.44l-.372-.22-3.427.878.891-3.343-.242-.384A9.956 9.956 0 0 1 2 12C2 6.486 6.486 2 12 2s10 4.486 10 10-4.486 10-10 10z" />
         </svg>
-        Message on WhatsApp
+        WhatsApp
       </a>
 
       <!-- Call -->
@@ -1303,7 +1449,7 @@
   <!-- ── Footer ── -->
   <footer class="footer" role="contentinfo">
     <span class="foot-lbl">NOCTA &copy; 2026</span>
-    <span class="foot-lbl" aria-hidden="true">V · ARTS</span>
+    <span class="foot-lbl" aria-hidden="true">• A • T • S •</span>
   </footer>
 
   <!-- ── QR Button — fixed bottom left ── -->
@@ -1334,7 +1480,7 @@
         <img src="qr.png" alt="Scan QR Code"
           onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'100\' height=\'100\' viewBox=\'0 0 100 100\'><rect width=\'100\' height=\'100\' fill=\'%23f0f0f0\'/><text x=\'50\' y=\'50\' font-family=\'sans-serif\' font-size=\'10\' text-anchor=\'middle\' alignment-baseline=\'middle\' fill=\'%23a0a0a0\'>qr.png</text></svg>'">
       </div>
-      <h2 id="modal-title" class="sub-main" style="margin-bottom: 2rem;">Scan to Connect</h2>
+      <h2 id="modal-title" class="sub-main" style="margin-bottom: 2rem;">Scan to connect</h2>
       <button class="btn" id="btn-close-qr" aria-label="Close QR Modal">
         <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
           stroke-linejoin="round">
@@ -1347,6 +1493,71 @@
   </div>
 
   <script>
+    /* ── Fluid Animation Initializer ── */
+    const fluidCanvas = document.getElementById('fluid-canvas');
+    const fluid = new FluidAnimation(fluidCanvas);
+    // fluid.startAutoSwirls(); // Removed as requested
+
+    /* ── Loader ─────────────────────────────────────────── */
+    (function () {
+      const loader = document.getElementById('page-loader');
+      const lInt = document.getElementById('loader-int');
+      const lDec = document.getElementById('loader-dec');
+      const bar = document.getElementById('loader-bar');
+
+      if (!loader) {
+        document.body.classList.add('loaded');
+        fluid.stopAutoSwirls();
+        return;
+      }
+
+      let progress = 0;
+
+      function finish() {
+        /* Update display to 100.00 */
+        lInt.textContent = '100';
+        lDec.textContent = '00';
+        bar.style.width = '100%';
+
+        /* Short pause so user sees 100, then fade out */
+        setTimeout(() => {
+          loader.classList.add('hidden');
+
+          /* Auto swirls were removed from loading as requested */
+
+          /* Fire .loaded exactly when the CSS opacity transition ends */
+          loader.addEventListener('transitionend', () => {
+            document.body.classList.add('loaded');
+          }, { once: true });
+
+          /* Safety fallback — if transitionend never fires (e.g. reduced-motion) */
+          setTimeout(() => {
+            if (!document.body.classList.contains('loaded')) {
+              document.body.classList.add('loaded');
+            }
+          }, 1200);
+        }, 500);
+      }
+
+      const interval = setInterval(() => {
+        /* Ease-out feel: slower as it approaches 100 */
+        const remaining = 100 - progress;
+        progress += Math.min(remaining * 0.08 + Math.random() * 1.2, remaining);
+
+        if (progress >= 100) {
+          progress = 100;
+          clearInterval(interval);
+          finish();
+          return;
+        }
+
+        const [int, dec] = progress.toFixed(2).split('.');
+        lInt.textContent = int.padStart(2, '0');
+        lDec.textContent = dec;
+        bar.style.width = progress + '%';
+      }, 40);
+    }());
+
     /* Theme toggle */
     const html = document.documentElement;
     const btn = document.getElementById('themeToggle');
@@ -1356,7 +1567,7 @@
     if (saved) {
       html.setAttribute('data-theme', saved);
     } else {
-      html.setAttribute('data-theme', 'light');
+      html.setAttribute('data-theme', 'dark');
     }
 
     function applyTheme(theme) {
@@ -1368,108 +1579,96 @@
       applyTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
     });
 
-    /* QR Modal logic */
+    /* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       MODAL & OVERLAY MANAGEMENT (History API / Back Button Support)
+    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
     const qrModal = document.getElementById('qr-modal');
+    const contactOverlay = document.getElementById('contact-overlay');
+    const comingSoonOverlay = document.getElementById('coming-soon-overlay');
+    const tarifPanel = document.getElementById('tarif-panel');
+
+    const allOverlays = [qrModal, contactOverlay, comingSoonOverlay, tarifPanel];
+
+    function openOverlay(el) {
+      if (!el) return;
+      el.classList.add('active');
+      if (el.id === 'tarif-panel') document.body.style.overflow = 'hidden';
+      // Push a state so the back button closes the modal
+      history.pushState({ overlay: el.id }, '');
+    }
+
+    function closeAllOverlays() {
+      allOverlays.forEach(o => {
+        if (o) o.classList.remove('active');
+      });
+      document.body.style.overflow = '';
+    }
+
+    // Handle back button
+    window.addEventListener('popstate', () => {
+      closeAllOverlays();
+    });
+
+    /* QR Modal logic */
     const btnOpenQr = document.getElementById('btn-open-qr');
     const btnCloseQr = document.getElementById('btn-close-qr');
 
-    btnOpenQr.addEventListener('click', () => {
-      qrModal.classList.add('active');
-    });
-
-    btnCloseQr.addEventListener('click', () => {
-      qrModal.classList.remove('active');
-    });
-
-    // Close on overlay click
+    btnOpenQr.addEventListener('click', () => openOverlay(qrModal));
+    btnCloseQr.addEventListener('click', () => history.back());
     qrModal.addEventListener('click', (e) => {
-      if (e.target === qrModal) {
-        qrModal.classList.remove('active');
-      }
-    });
-
-    // Close on escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        qrModal.classList.remove('active');
-        contactOverlay.classList.remove('active');
-        document.getElementById('coming-soon-overlay').classList.remove('active');
-        tarifPanel.classList.remove('active');
-        document.body.style.overflow = '';
-      }
+      if (e.target === qrModal) history.back();
     });
 
     /* Tarif Panel logic */
-    const tarifPanel = document.getElementById('tarif-panel');
     const btnOpenTarif = document.getElementById('btn-open-tarif');
     const btnCloseTarif = document.getElementById('btn-close-tarif');
 
-    btnOpenTarif.addEventListener('click', () => {
-      tarifPanel.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    });
-
-    btnCloseTarif.addEventListener('click', () => {
-      tarifPanel.classList.remove('active');
-      document.body.style.overflow = '';
-    });
+    btnOpenTarif.addEventListener('click', () => openOverlay(tarifPanel));
+    btnCloseTarif.addEventListener('click', () => history.back());
 
     /* Contact FAB + overlay logic */
-    const contactOverlay = document.getElementById('contact-overlay');
     const btnContactFab = document.getElementById('btn-contact-fab');
     const btnCloseContact = document.getElementById('btn-close-contact');
 
-    btnContactFab.addEventListener('click', () => {
-      contactOverlay.classList.add('active');
-    });
-
-    btnCloseContact.addEventListener('click', () => {
-      contactOverlay.classList.remove('active');
-    });
-
+    btnContactFab.addEventListener('click', () => openOverlay(contactOverlay));
+    btnCloseContact.addEventListener('click', () => history.back());
     contactOverlay.addEventListener('click', (e) => {
-      if (e.target === contactOverlay) {
-        contactOverlay.classList.remove('active');
-      }
+      if (e.target === contactOverlay) history.back();
     });
 
     /* Coming Soon overlay logic */
-    const comingSoonOverlay = document.getElementById('coming-soon-overlay');
     const btnFb = document.getElementById('btn-fb');
     const btnIg = document.getElementById('btn-ig');
     const btnCloseComingSoon = document.getElementById('btn-close-coming-soon');
 
-    // Open when Facebook is clicked
     btnFb.addEventListener('click', (e) => {
       e.preventDefault();
-      comingSoonOverlay.classList.add('active');
+      openOverlay(comingSoonOverlay);
     });
-
-    // Close button
-    btnCloseComingSoon.addEventListener('click', () => {
-      comingSoonOverlay.classList.remove('active');
-    });
-
-    // Close when clicking outside modal content
+    btnCloseComingSoon.addEventListener('click', () => history.back());
     comingSoonOverlay.addEventListener('click', (e) => {
-      if (e.target === comingSoonOverlay) {
-        comingSoonOverlay.classList.remove('active');
-      }
+      if (e.target === comingSoonOverlay) history.back();
     });
 
     // Contact button inside coming soon overlay
-    const btnCsContact = document.getElementById('btn-cs-contact');
-    btnCsContact.addEventListener('click', () => {
+    document.getElementById('btn-cs-contact').addEventListener('click', () => {
+      // Close current, then open next
+      // To keep history clean, we replace the state or just navigate
       comingSoonOverlay.classList.remove('active');
       contactOverlay.classList.add('active');
+      // We don't push another state here to avoid needing two 'backs'
     });
 
     // Close contact overlay when a link is tapped
-    document.getElementById('choice-whatsapp').addEventListener('click', () => {
-      contactOverlay.classList.remove('active');
-    });
-    document.getElementById('choice-phone').addEventListener('click', () => {
-      contactOverlay.classList.remove('active');
+    document.getElementById('choice-whatsapp').addEventListener('click', () => history.back());
+    document.getElementById('choice-phone').addEventListener('click', () => history.back());
+
+    // Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        const anyActive = allOverlays.some(o => o.classList.contains('active'));
+        if (anyActive) history.back();
+      }
     });
 
     /* Tap ripple */
@@ -1488,7 +1687,7 @@
           'background:var(--accent)',
           'opacity:.5',
           'pointer-events:none',
-          'animation:rip .55s ease-out forwards'
+          'animation:rip .35s ease-out forwards'
         ].join(';');
         this.appendChild(r);
         r.addEventListener('animationend', () => r.remove());
